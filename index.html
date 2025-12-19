@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday, Meca 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 80px;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      opacity: 0.8;
+      font-size: 1rem;
+    }
+
+    section {
+      margin-bottom: 64px;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 1.5s ease forwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.3s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    section:nth-child(4) { animation-delay: 0.9s; }
+    section:nth-child(5) { animation-delay: 1.2s; }
+    section:nth-child(6) { animation-delay: 1.5s; }
+
+    section p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-top: 32px;
+      opacity: 0.9;
+    }
+
+    .music {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .music:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    footer {
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.8rem;
+      margin-top: 80px;
+    }
+
+    /* Love effect */
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 14px;
+      opacity: 0.6;
+      animation: fall linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="hero">
+      <h1>Happy Birthday, Meca 🤍</h1>
+      <p>a small page, with a lot of love</p>
+    </div>
+
+    <section>
+      <p>Hii, Meca. Happy birthday love.</p>
+      <p>I've run out of words to say, tapi aku pengen bilang terima kasih karena kamu sudah bertahan sejauh ini di dunia yang kadang terasa kejam.</p>
+    </section>
+
+    <section>
+      <p>Wishing you all the best might sound pretty lame, but I mean it.</p>
+      <p>Buat aku, keberadaan kamu aja udah cukup. Bahkan jika suatu hari kamu merasa belum mencapai hal besar, kamu udah berarti cuma dengan jadi diri sendiri.</p>
+    </section>
+
+    <section>
+      <p>This world will bring you storms and pains, dan kamu gak selalu ngerti kenapa semua itu harus terjadi.</p>
+      <p>But hang in there, you will be fine. Aku ngeliat gimana kamu tumbuh selama bertahun-tahun ini. Time fills you in my heart and living in it.</p>
+    </section>
+
+    <section>
+      <p>I really love you. Dari segala kerumitan hidup kamu, aku gak pernah mau jadi salah satunya.</p>
+      <p>Aku pengen jadi tempat yang menenangkan saat dunia gak berpihak ke kamu.</p>
+    </section>
+
+    <section>
+      <p>Terima kasih untuk semua beban dan tuntutan yang sering kamu sembunyikan, tapi diam-diam kamu usahakan.</p>
+      <p>I’m proud of you.</p>
+      <p>Dan ya, kamu seharusnya berterima kasih ke Merbabu, karena mempertemukan kamu sama aku 😛</p>
+    </section>
+
+    <section>
+      <p>Aku harap hari ini sesuatu yang baik benar-benar terjadi padamu.</p>
+      <p>I sincerely wish you happiness. Semoga semua selalu baik-baik aja, dalam segala cara, aamin 🤍</p>
+
+      <div class="signature">
+        with love,<br>
+        tiara.
+      </div>
+    </section>
+
+    <footer>
+      made with love • just for you
+    </footer>
+
+  </div>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music" onclick="toggleMusic()">🎵 play music</div>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        music.play();
+        isPlaying = true;
+        document.querySelector(".music").innerText = "⏸ pause music";
+      } else {
+        music.pause();
+        isPlaying = false;
+        document.querySelector(".music").innerText = "🎵 play music";
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "🤍";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 6 + Math.random() * 4 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+
+    setInterval(createHeart, 1200);
+  </script>
+
+</body>
+</html>
